@@ -1,0 +1,16 @@
+{
+  "name": "mineflayer-multi-account",
+  "version": "1.0.0",
+  "description": "Run multiple Mineflayer bots on different Microsoft accounts simultaneously",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "mineflayer": "^4.23.0"
+  },
+  "overrides": {
+    "axios": "^1.8.4"
+  }
+}

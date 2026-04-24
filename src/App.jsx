@@ -19,8 +19,7 @@ export default function App() {
       {/* ── Game Panel ──────────────────────────────────────────── */}
       <main className="flex-1 flex flex-col min-h-[60vh] lg:min-h-screen">
         <header className="px-6 py-4 border-b border-[#2d2b52] flex items-center gap-3 shrink-0">
-          <span className="text-xl">🎓</span>
-          <span className="font-extrabold text-white text-sm tracking-tight">Code Course Game</span>
+          <span className="font-extrabold text-white text-sm tracking-tight">Course Code Game</span>
           <span className="text-xs text-slate-500 border border-[#2d2b52] rounded-full px-2 py-0.5">Ontario Edition</span>
         </header>
 

@@ -42,7 +42,6 @@ export default function GameView({
   const inputRef = useRef(null)
   const elapsed = useElapsedTimer()
 
-  // Re-focus input whenever the question changes
   useEffect(() => {
     inputRef.current?.focus()
   }, [questionIndex])
@@ -69,7 +68,7 @@ export default function GameView({
       {/* Progress bar */}
       <div className="w-full max-w-lg h-1.5 bg-[#1a1830] rounded-full mb-10 overflow-hidden">
         <div
-          className="h-full bg-gradient-to-r from-violet-500 to-blue-500 rounded-full transition-all duration-300"
+          className="h-full bg-violet-500 rounded-full transition-all duration-300"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -99,9 +98,9 @@ export default function GameView({
       {/* Submit button */}
       <button
         onClick={submitAnswer}
-        className="mt-4 w-full max-w-lg py-3 rounded-xl bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 text-white font-bold transition-all duration-150 hover:scale-[1.01] cursor-pointer"
+        className="mt-4 w-full max-w-lg py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold transition-colors duration-150 cursor-pointer"
       >
-        Submit ↵
+        Submit
       </button>
 
       <p className="mt-4 text-xs text-slate-600">Press Enter or click Submit · Case-insensitive</p>

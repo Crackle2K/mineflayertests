@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback } from 'react'
 import { getCoursesByDifficulty, shuffle } from '../data/courses'
+import { sanitizePlayerName } from '../lib/nameValidator'
 import { supabase } from '../lib/supabase'
 
 const QUESTIONS_PER_GAME = 10
@@ -60,8 +61,10 @@ export function useGame() {
     if (!supabase) return
     setSubmitting(true)
     try {
+      // Sanitize the name before saving (server-side safety)
+      const cleanName = sanitizePlayerName(name)
       await supabase.from('leaderboard').insert({
-        player_name: name,
+        player_name: cleanName,
         time_ms: timeMs,
         difficulty: diff,
       })

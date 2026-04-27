@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { validatePlayerName } from '../lib/nameValidator'
 
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard']
 
@@ -10,7 +11,8 @@ const DIFF_META = {
 
 export default function StartScreen({ playerName, setPlayerName, onStart }) {
   const [selectedDiff, setSelectedDiff] = useState(null)
-  const canStart = playerName.trim().length > 0 && selectedDiff !== null
+  const validation = validatePlayerName(playerName)
+  const canStart = validation.isValid && selectedDiff !== null
 
   function handleStart() {
     if (canStart) onStart(playerName.trim(), selectedDiff)
@@ -35,8 +37,15 @@ export default function StartScreen({ playerName, setPlayerName, onStart }) {
           onKeyDown={e => e.key === 'Enter' && handleStart()}
           placeholder="e.g. Alex"
           maxLength={30}
-          className="w-full bg-[#1a1830] border border-[#2d2b52] rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-violet-500 transition"
+          className={`w-full bg-[#1a1830] border rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 transition ${
+            !validation.isValid && playerName.length > 0
+              ? 'border-rose-500 focus:ring-rose-500'
+              : 'border-[#2d2b52] focus:ring-violet-500'
+          }`}
         />
+        {!validation.isValid && playerName.length > 0 && (
+          <p className="text-xs text-rose-400 mt-2">{validation.message}</p>
+        )}
       </div>
 
       {/* Difficulty selector */}

@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 
 const DIFF_COLORS = {
-  Easy:   'text-emerald-400 bg-emerald-400/10 border-emerald-500/30',
-  Medium: 'text-violet-400 bg-violet-400/10 border-violet-500/30',
-  Hard:   'text-rose-400 bg-rose-400/10 border-rose-500/30',
+  Easy:   'text-[#96E072] bg-[#96E072]/10 border-[#3DA35D]/30',
+  Medium: 'text-[#96E072] bg-[#96E072]/10 border-[#3DA35D]/30',
+  Hard:   'text-[#E8FCCF] bg-[#E8FCCF]/10 border-[#96E072]/30',
 }
 
 function useElapsedTimer() {
@@ -66,15 +66,15 @@ export default function GameView({
       </div>
 
       {/* Progress bar */}
-      <div className="w-full max-w-lg h-1.5 bg-[#1a1830] rounded-full mb-10 overflow-hidden">
+      <div className="w-full max-w-lg h-1.5 bg-[#1a1f14] rounded-full mb-10 overflow-hidden">
         <div
-          className="h-full bg-violet-500 rounded-full transition-all duration-300"
+          className="h-full bg-[#96E072] rounded-full transition-all duration-300"
           style={{ width: `${progress}%` }}
         />
       </div>
 
       {/* Course name card */}
-      <div className="w-full max-w-lg bg-[#1a1830] border border-[#2d2b52] rounded-2xl p-8 mb-6 text-center fade-in">
+      <div className="w-full max-w-lg bg-[#1a1f14] border border-[#3E8914] rounded-2xl p-8 mb-6 text-center fade-in">
         <p className="text-xs uppercase tracking-widest text-slate-500 mb-4 font-semibold">Course Name</p>
         <h2 className="text-2xl font-bold text-white leading-snug">{currentCourse?.name}</h2>
       </div>
@@ -91,14 +91,14 @@ export default function GameView({
           maxLength={8}
           spellCheck={false}
           autoComplete="off"
-          className="w-full bg-[#1a1830] border-2 border-[#2d2b52] rounded-xl px-5 py-4 text-center text-2xl font-mono font-bold uppercase tracking-widest text-white placeholder-slate-600 focus:outline-none focus:border-violet-500 transition"
+          className="w-full bg-[#1a1f14] border-2 border-[#3E8914] rounded-xl px-5 py-4 text-center text-2xl font-mono font-bold uppercase tracking-widest text-white placeholder-slate-600 focus:outline-none focus:border-[#3DA35D] transition"
         />
       </div>
 
       {/* Submit button */}
       <button
         onClick={submitAnswer}
-        className="mt-4 w-full max-w-lg py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold transition-colors duration-150 cursor-pointer"
+        className="mt-4 w-full max-w-lg py-3 rounded-xl bg-[#3DA35D] hover:bg-[#96E072] text-[#0f0f0f] font-bold transition-colors duration-150 cursor-pointer"
       >
         Submit
       </button>

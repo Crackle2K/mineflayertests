@@ -4,9 +4,9 @@ import { validatePlayerName } from '../lib/nameValidator'
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard']
 
 const DIFF_META = {
-  Easy:   { label: 'Easy',   desc: 'Core Grade 9–12 courses',    accent: 'border-emerald-600 text-emerald-400' },
-  Medium: { label: 'Medium', desc: 'Arts, tech & social courses', accent: 'border-violet-600 text-violet-400'  },
-  Hard:   { label: 'Hard',   desc: 'Obscure & specialized codes', accent: 'border-rose-600 text-rose-400'      },
+  Easy:   { label: 'Easy',   desc: 'Core Grade 9–12 courses',    accent: 'border-[#3DA35D] text-[#96E072]' },
+  Medium: { label: 'Medium', desc: 'Arts, tech & social courses', accent: 'border-[#3DA35D] text-[#96E072]'  },
+  Hard:   { label: 'Hard',   desc: 'Obscure & specialized codes', accent: 'border-[#96E072] text-[#E8FCCF]'      },
 }
 
 export default function StartScreen({ playerName, setPlayerName, onStart }) {
@@ -37,10 +37,10 @@ export default function StartScreen({ playerName, setPlayerName, onStart }) {
           onKeyDown={e => e.key === 'Enter' && handleStart()}
           placeholder="e.g. Alex"
           maxLength={30}
-          className={`w-full bg-[#1a1830] border rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 transition ${
+          className={`w-full bg-[#1a1f14] border rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 transition ${
             !validation.isValid && playerName.length > 0
-              ? 'border-rose-500 focus:ring-rose-500'
-              : 'border-[#2d2b52] focus:ring-violet-500'
+              ? 'border-[#ff6b6b] focus:ring-[#ff6b6b]'
+              : 'border-[#3E8914] focus:ring-[#3DA35D]'
           }`}
         />
         {!validation.isValid && playerName.length > 0 && (
@@ -63,8 +63,8 @@ export default function StartScreen({ playerName, setPlayerName, onStart }) {
                 onClick={() => setSelectedDiff(diff)}
                 className={`w-full flex items-center gap-4 px-5 py-4 rounded-xl border transition-all duration-150 cursor-pointer
                   ${isSelected
-                    ? `bg-[#1a1830] ${m.accent} shadow-lg`
-                    : 'bg-[#1a1830] border-[#2d2b52] text-slate-400 hover:border-slate-500'
+                    ? `bg-[#1a1f14] ${m.accent} shadow-lg`
+                    : 'bg-[#1a1f14] border-[#3E8914] text-slate-400 hover:border-[#3DA35D]'
                   }`}
               >
                 <div className="text-left flex-1">
@@ -84,8 +84,8 @@ export default function StartScreen({ playerName, setPlayerName, onStart }) {
         disabled={!canStart}
         className={`w-full max-w-sm py-4 rounded-xl font-bold text-lg transition-all duration-150
           ${canStart
-            ? 'bg-violet-600 hover:bg-violet-500 text-white shadow-lg cursor-pointer'
-            : 'bg-[#1a1830] text-slate-600 border border-[#2d2b52] cursor-not-allowed'
+            ? 'bg-[#3DA35D] hover:bg-[#96E072] text-[#0f0f0f] shadow-lg cursor-pointer'
+            : 'bg-[#1a1f14] text-slate-600 border border-[#3E8914] cursor-not-allowed'
           }`}
       >
         Start Game

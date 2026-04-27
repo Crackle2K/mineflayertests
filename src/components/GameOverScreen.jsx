@@ -15,9 +15,9 @@ function getRating(ms, difficulty) {
 }
 
 const DIFF_TEXT = {
-  Easy:   'text-emerald-400',
-  Medium: 'text-violet-400',
-  Hard:   'text-rose-400',
+  Easy:   'text-[#96E072]',
+  Medium: 'text-[#96E072]',
+  Hard:   'text-[#E8FCCF]',
 }
 
 export default function GameOverScreen({ playerName, totalTimeMs, difficulty, submitting, onPlayAgain }) {
@@ -32,7 +32,7 @@ export default function GameOverScreen({ playerName, totalTimeMs, difficulty, su
       </p>
 
       {/* Time card */}
-      <div className="w-full max-w-sm bg-[#1a1830] border border-[#2d2b52] rounded-2xl p-8 text-center mb-6">
+      <div className="w-full max-w-sm bg-[#1a1f14] border border-[#3E8914] rounded-2xl p-8 text-center mb-6">
         <p className="text-xs uppercase tracking-widest text-slate-500 mb-3 font-semibold">Total Time</p>
         <p className="text-5xl font-mono font-extrabold text-white mb-3">{formatMs(totalTimeMs)}</p>
         <span className={`text-sm font-bold ${rating.color}`}>{rating.label} Rating</span>
@@ -44,7 +44,7 @@ export default function GameOverScreen({ playerName, totalTimeMs, difficulty, su
 
       <button
         onClick={onPlayAgain}
-        className="w-full max-w-sm py-4 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-lg transition-colors duration-150 cursor-pointer"
+        className="w-full max-w-sm py-4 rounded-xl bg-[#3DA35D] hover:bg-[#96E072] text-[#0f0f0f] font-bold text-lg transition-colors duration-150 cursor-pointer"
       >
         Play Again
       </button>

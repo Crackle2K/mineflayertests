@@ -25,26 +25,26 @@ export default function GameOverScreen({ playerName, totalTimeMs, difficulty, su
 
   return (
     <div className="flex flex-col items-center justify-center h-full py-12 px-6 fade-in">
-      <h1 className="text-3xl font-extrabold text-white mb-1">Nice work, {playerName}!</h1>
-      <p className="text-slate-400 text-sm mb-8">
+      <h1 className="text-3xl font-extrabold text-[#e8fccf] mb-1">Nice work, {playerName}!</h1>
+      <p className="text-[#96E072] text-sm mb-8">
         You finished all 10 courses on{' '}
         <span className={`font-semibold ${DIFF_TEXT[difficulty]}`}>{difficulty}</span> mode.
       </p>
 
       {/* Time card */}
-      <div className="w-full max-w-sm bg-[#1a1f14] border border-[#3E8914] rounded-2xl p-8 text-center mb-6">
-        <p className="text-xs uppercase tracking-widest text-slate-500 mb-3 font-semibold">Total Time</p>
-        <p className="text-5xl font-mono font-extrabold text-white mb-3">{formatMs(totalTimeMs)}</p>
+      <div className="w-full max-w-sm bg-[#1a3d0f] border border-[#3E8914] rounded-2xl p-8 text-center mb-6 shadow-md">
+        <p className="text-xs uppercase tracking-widest text-[#3DA35D] mb-3 font-semibold">Total Time</p>
+        <p className="text-5xl font-mono font-extrabold text-[#e8fccf] mb-3">{formatMs(totalTimeMs)}</p>
         <span className={`text-sm font-bold ${rating.color}`}>{rating.label} Rating</span>
       </div>
 
       {submitting && (
-        <p className="text-xs text-slate-500 mb-4 animate-pulse">Saving your score...</p>
+        <p className="text-xs text-[#3DA35D] mb-4 animate-pulse">Saving your score...</p>
       )}
 
       <button
         onClick={onPlayAgain}
-        className="w-full max-w-sm py-4 rounded-xl bg-[#3DA35D] hover:bg-[#96E072] text-[#0f0f0f] font-bold text-lg transition-colors duration-150 cursor-pointer"
+        className="w-full max-w-sm py-4 rounded-xl bg-[#3DA35D] hover:bg-[#96E072] text-[#0a2608] font-bold text-lg transition-colors duration-150 cursor-pointer"
       >
         Play Again
       </button>

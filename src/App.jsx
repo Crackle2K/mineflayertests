@@ -18,9 +18,9 @@ export default function App() {
     <div className="min-h-screen flex flex-col lg:flex-row">
       {/* ── Game Panel ──────────────────────────────────────────── */}
       <main className="flex-1 flex flex-col min-h-[60vh] lg:min-h-screen">
-        <header className="px-6 py-4 border-b border-[#3E8914] flex items-center gap-3 shrink-0">
-          <span className="font-extrabold text-white text-sm tracking-tight">Course Code Game</span>
-          <span className="text-xs text-slate-500 border border-[#2d2b52] rounded-full px-2 py-0.5">Ontario Edition</span>
+        <header className="px-6 py-4 border-b border-[#3E8914] flex items-center gap-3 shrink-0 bg-[#0a2608]">
+          <span className="font-extrabold text-[#e8fccf] text-sm tracking-tight">Course Code Game</span>
+          <span className="text-xs text-[#96E072] border border-[#3E8914] rounded-full px-2 py-0.5">Ontario Edition</span>
         </header>
 
         <div className="flex-1 flex flex-col">

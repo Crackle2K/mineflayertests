@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.104.1",
+    "@supabase/supabase-js": "^2.105.0",
     "bad-words": "^3.0.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
